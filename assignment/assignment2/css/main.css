@@ -1,9 +1,12 @@
 body {
     padding: 0;
-    overflow: hidden;
     font-family: helvetica, arial, sans-serif;
 }
 
 /* =================
 Add more styles here!
 ================= */
+
+#fruit {
+  background-color: #eee;
+}
