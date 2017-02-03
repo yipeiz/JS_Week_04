@@ -6,7 +6,7 @@
 Set variables "query1" through "query7" by using underscore functions to answer
 the specified question or complete the task.
 
-There are two stretch goals where you will be asked to enhance a function and 
+There are two stretch goals where you will be asked to enhance a function and
 use a templating system.
 
 ===================== */
@@ -63,7 +63,7 @@ Is printMenu a function? Answer this question with underscore. Should evaluate
 to true.
 ===================== */
 
-var query1 = _.isFunction(printMenu);
+var query1;
 
 console.log('printMenu is a function:', query1);
 
@@ -72,7 +72,7 @@ Is bakedGoods an array? Answer this question with underscore. Should evaluate
 to true.
 ===================== */
 
-var query2 = _.isArray(bakedGoods);
+var query2;
 
 console.log('bakedGoods is an array:', query2);
 
@@ -81,7 +81,7 @@ Is the first element in bakedGoods an object? Answer this question with
 underscore. Should evaluate to true.
 ===================== */
 
-var query3 = _.isObject(_.first(bakedGoods));
+var query3;
 
 console.log('The first element in bakedGoods is an object:', query3);
 
@@ -89,7 +89,7 @@ console.log('The first element in bakedGoods is an object:', query3);
 Use _.where to return all cakes. Or bread. Whichever is your favorite.
 ===================== */
 
-var query4 = _.where(bakedGoods, {"type": "Cake"});
+var query4;
 
 console.log('All bread. Or cakes:', query4);
 
@@ -97,9 +97,7 @@ console.log('All bread. Or cakes:', query4);
 Use _.filter to return all baked goods that cost more than $4.
 ===================== */
 
-var query5 = _.filter(bakedGoods, function(bakedGood) {
-  return (bakedGood.price > 4);
-});
+var query5;
 
 console.log('More than $4:', query5);
 
@@ -107,9 +105,7 @@ console.log('More than $4:', query5);
 Use _.sortBy to order the list by inventory (from lowest to highest).
 ===================== */
 
-var query6 = _.sortBy(bakedGoods, function(bakedGood) {
-  return bakedGood.inventory;
-});
+var query6;
 
 console.log('Sorted by inventory (lowest to highest):', query6);
 
@@ -117,9 +113,7 @@ console.log('Sorted by inventory (lowest to highest):', query6);
 Use _.groupBy to organize the baked goods by type.
 ===================== */
 
-var query7 = _.groupBy(bakedGoods, function(bakedGood) {
-  return bakedGood.type;
-});
+var query7;
 
 console.log('Grouped by type:', query7);
 
