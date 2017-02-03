@@ -1,14 +1,23 @@
 /* =====================
-  Lab 1, Part 1
+  Lab 1, Part 1 - reviewing functions as values
 
   Writing a successful ajax call requires treating functions as values.
   Treated as a values, functions can be thought of as recipes that other
   functions can use.
+  Here's such a recipe for pbj sandwiches:
 
-  The first 'recipe' you should write is one that returns true for strings with
-  greater than or equal to 5 characters and false for those shorter than 5 characters.
+  var pbj = function(peanutButter, jelly, bread) {
+    stack(bread);
+    smear(peanutButter);
+    smear(jelly);
+    stack(bread);
+  }
 
-  This recipe, given to underscore's _.filter will return only the elements we want.
+  The first recipe you should write is one that returns true for strings with
+   greater than or equal to 5 characters and false for those shorter than 5 characters.
+
+  This recipe, can be used by underscore's _.filter. It will return only words with
+   >=5 characters.
 ===================== */
 var isLengthOfFiveOrMore = function(str) {};
 
@@ -45,11 +54,11 @@ console.log("fizzbuzz success:",
 /* =====================
   Writing ajax calls works very much like these higher order functions from
   underscore. Here's the ajax syntax:
-  $.ajax(<URL GOES HERE>).done(<RECIPE GOES HERE>);
+  $.ajax(<YOUR-URL>).done(<YOUR-RECIPE>);
 
   Your job is to write functions and ajax calls for one of the three provided
-  URLs to pull down and then store data collected through AJAX in variables so
-  that you can work with it. To test your success, prove that you can log the
+  URLs (below) to pull down and then store data collected through AJAX in variables
+  so that you can work with it. To test your success, prove that you can log the
   resulting data to your console.
 
   You may choose whichever dataset you find most interesting.
@@ -73,6 +82,7 @@ console.log("fizzbuzz success:",
         // ================================
         // BAD ============================
         // ================================
+        var computedValue = $.ajax(<URL>)
         console.log(computedValue);
 
         The problem with logging here is that this will probably happen before that ajax call can
@@ -87,7 +97,7 @@ var phillyBikeCrashesDataUrl = "https://raw.githubusercontent.com/CPLN690-MUSA61
 
 /* =====================
   Data you grab through ajax is just text. You'll need to parse it as javascript
-  objects to really work with it. Use the function JSON.parse on the string you
+  objects to really work with it. Use the function `JSON.parse` on the string you
   downloaded for the exercise above to parse your strings as javascript objects.
 
   Remember to call all code within the function body. Use console.log to make sure

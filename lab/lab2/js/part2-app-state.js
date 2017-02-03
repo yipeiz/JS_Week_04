@@ -1,5 +1,5 @@
 /* =====================
-  Lab 2, part 2: application state
+  Lab 2, part 2 - application state
 
   Spatial applications aren't typically as simple as putting data on a map. In
   addition, you'll usually need to change the stored data in response to user
@@ -16,14 +16,16 @@
        L.marker([50.5, 30.5]).addTo(map);
 
        This is accomplishing two goals. L.marker([50.5, 30.5]) makes a marker
-       and .addTo(map) adds that marker to the map. In this task, you will be
-       asked to create separate functions: one to create markers and one to
-       add them to the map.
+       and .addTo(map) adds that marker to the map. This task differs in that,
+       you are being asked to create separate functions: one to create markers
+       and one to add them to the map.
 
+  (IMPORTANT!)
   NOTE 2: These functions are being called for you. Look to the bottom of this file
        to see where and how the functions you are defining will be used. Remember
        that function calls (e.g. func();) which are equal to a value (i.e. you
        can set a var to it: var result = func();) must use the 'return' keyword.
+
        var justOne = function() {
          return 1;
        }
@@ -58,19 +60,9 @@ var removeMarkers = function() {};
 
   Note: You can add or remove from the code at the bottom of this file.
 ===================== */
-/* =====================
- CODE EXECUTED DOWN HERE!
-===================== */
-
-downloadData.done(function(data) {
-  var parsed = parseData(data);
-  var markers = makeMarkers(parsed);
-  plotMarkers(markers);
-  removeMarkers(markers);
-});
 
 /* =====================
- Leaflet setup
+ Leaflet setup - feel free to ignore this
 ===================== */
 
 var map = L.map('map', {
@@ -84,3 +76,14 @@ var Stamen_TonerLite = L.tileLayer('http://stamen-tiles-{s}.a.ssl.fastly.net/ton
   maxZoom: 20,
   ext: 'png'
 }).addTo(map);
+
+/* =====================
+ CODE EXECUTED HERE!
+===================== */
+
+downloadData.done(function(data) {
+  var parsed = parseData(data);
+  var markers = makeMarkers(parsed);
+  plotMarkers(markers);
+  removeMarkers(markers);
+});
