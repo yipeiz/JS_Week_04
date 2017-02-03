@@ -24,6 +24,6 @@
 
 ## Homework Assignment (Due: Wednesday, February 8)
 - Complete [Code Academy HTML/CSS](https://www.codecademy.com/learn/web)
-- Complete [Week 4 Lab 2](lab/lab2) (Work with your partner to complete
-  lab 2)
-- Complete [Week 4 Assignment](assignment)
+- Complete [Week 4 Lab 1 and 2](lab/lab2)
+- Complete [Week 4 Assignment 1](assignment/assignment1)
+- Extra Credit: Complete [Week 4 Assignment 2](assignment/assignment2)
