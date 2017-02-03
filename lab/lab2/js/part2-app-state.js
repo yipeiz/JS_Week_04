@@ -32,7 +32,8 @@
        var one = justOne();
 ===================== */
 
-var downloadData = $.ajax("");
+// We set this to HTTP to prevent 'CORS' issues
+var downloadData = $.ajax("http://");
 var parseData = function() {};
 var makeMarkers = function() {};
 var plotMarkers = function() {};
