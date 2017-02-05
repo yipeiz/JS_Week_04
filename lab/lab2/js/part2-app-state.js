@@ -30,10 +30,18 @@
        var one = justOne();
 ===================== */
 
-var downloadData = $.ajax("");
-var parseData = function() {};
-var makeMarkers = function() {};
-var plotMarkers = function() {};
+var downloadData = $.ajax("https://raw.githubusercontent.com/CPLN690-MUSA610/datasets/master/json/philadelphia-solar-installations.json");
+var parseData = function(theT) { return JSON.parse(theT);} ;
+var makeMarkers = function(theA) {
+  return _.map(theA, function(theO){
+    return L.marker([theO.LAT,theO.LONG_]);
+  });
+ };
+var plotMarkers = function(theM) {
+   _.each(theM, function(theP) {
+     theP.addTo(map);
+   });
+};
 
 
 /* =====================
@@ -49,7 +57,11 @@ var plotMarkers = function() {};
   user's input.
 ===================== */
 
-var removeMarkers = function() {};
+var removeMarkers = function(theM) {
+  _.each(theM,function(theP){
+    map.removeLayer(theP);
+  });
+};
 
 /* =====================
   Optional, stretch goal
@@ -64,6 +76,7 @@ var removeMarkers = function() {};
 
 downloadData.done(function(data) {
   var parsed = parseData(data);
+  parsed = _.filter(parsed, function(theO2) {return theO2.YEARBUILT > 2009;});
   var markers = makeMarkers(parsed);
   plotMarkers(markers);
   removeMarkers(markers);

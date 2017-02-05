@@ -5,6 +5,7 @@
 /* =====================
   Call getAndParseData to grab our dataset through a jQuery.ajax call ($.ajax)
 ===================== */
+
 getAndParseData();
 
 /* =====================
@@ -25,12 +26,12 @@ $('button#my-button').click(function(e) {
   console.log("stringField", stringField);
 
 
+
   /* =====================
     Call our resetMap function to remove markers from the map and clear out the array of marker
     objects
   ===================== */
   resetMap();
-
   /* =====================
     Call our plotData function. It should plot all the markers that meet our criteria
   ===================== */
